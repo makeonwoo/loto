@@ -14,20 +14,12 @@ fun getRandomLottoNumber (): Int{
 fun getRandomLottoNumbers(): MutableList<Int>{
     val lottoNumbers = mutableListOf<Int>()
 
-    while(true){
-        val number = getRandomLottoNumber()
-        var flag_exist = 0
-        if (lottoNumbers.contains(number)){
-            flag_exist = 1
-            continue
-        }
-        if(flag_exist==1)
-            continue
-        else{
-            lottoNumbers.add(getRandomLottoNumber())
-        }
-        if(lottoNumbers.size>=6)
-            break
+    for (i in 1..6){
+        var number = 0
+        do {
+            number = getRandomLottoNumber()
+        }while (lottoNumbers.contains(number))
+        lottoNumbers.add(number)
     }
     return lottoNumbers
 }
