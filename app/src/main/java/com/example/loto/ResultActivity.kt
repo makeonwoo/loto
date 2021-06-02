@@ -14,16 +14,15 @@ class ResultActivity : AppCompatActivity() {
 
         val result = intent.getIntegerArrayListExtra("result") //?: return
         val constellation = intent.getStringExtra("constellation")
+        val date = intent.getStringExtra("date")
 
         result?.let{
             updateLottoBallImages(result.sortedBy{it})
         }
         constellation?.let{
             val resultLabel = findViewById<TextView>(R.id.resultLabel)
-            resultLabel.text = "${constellation}의 ${SimpleDateFormat("yyyy년 MM월 dd일").format(Date())} 로또 번호입니다"
+            resultLabel.text = "${constellation}의 ${date} 로또 번호입니다"
         }
-
-
     }
 
     private fun updateLottoBallImages(result_sorted:List<Int>){
