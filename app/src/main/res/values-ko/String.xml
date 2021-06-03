@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">역전로또</string>
+    <string name="constel">별자리 기반 로또 생성</string>
+
+    </resources>
